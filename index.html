@@ -29,9 +29,9 @@
   var count;
   var tri = [];
   var squ = [];
-  var palWidth = 150;
+  var palWidth;
   var palHighCount;
-  var palWideCount = 4;
+  var palWideCount = 3;
   var swatchCount = 24;
   var swatchUnit;
 
@@ -144,7 +144,7 @@
 
   function setupPalette() { //PALETTE
 
-
+    palWidth = ((windowHeight/(swatchCount/palWideCount))*palWideCount)/2;
 
     //SQUARES PALETTE
     var indexSq = 0;
