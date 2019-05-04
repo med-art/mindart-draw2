@@ -163,14 +163,14 @@
     buttonChangePalette.style("border", "1px solid white");
     buttonChangePalette.size(palWidth, bHeight * 2);
     buttonChangePalette.position(0, palHighCount * swatchUnit + palWidth);
-    buttonChangePalette.mouseClicked(changePalette);
+    buttonChangePalette.mousePressed(changePalette);
 
     var buttonRestart = createButton('Restart');
     buttonRestart.style("background-color", color(200));
     buttonRestart.style("border", "1px solid white");
     buttonRestart.size(palWidth, bHeight);
     buttonRestart.position(0, palHighCount * swatchUnit + palWidth + bHeight * 2);
-    buttonRestart.mouseClicked(restart);
+    buttonRestart.mousePressed(restart);
 
     //SUBMIT POP-UP
         thankyou = "THANK YOU ! <br> Your drawing ID is:<br><br><b>";
