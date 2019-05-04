@@ -4,7 +4,7 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
   <style>
     body {
@@ -164,6 +164,7 @@
     buttonChangePalette.size(palWidth, bHeight * 2);
     buttonChangePalette.position(0, palHighCount * swatchUnit + palWidth);
     buttonChangePalette.touchStarted(changePalette);
+    buttonChangePalette.mousePressed(changePalette);
 
     var buttonRestart = createButton('Restart');
     buttonRestart.style("background-color", color(200));
@@ -171,6 +172,7 @@
     buttonRestart.size(palWidth, bHeight);
     buttonRestart.position(0, palHighCount * swatchUnit + palWidth + bHeight * 2);
     buttonRestart.touchStarted(restart);
+   buttonRestart.mousePressed(restart);
 
     //SUBMIT POP-UP
         thankyou = "THANK YOU ! <br> Your drawing ID is:<br><br><b>";
