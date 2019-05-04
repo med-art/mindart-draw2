@@ -234,7 +234,7 @@
   }
 
 
-  function mouseDragged() {
+  function touchMoved(){
     if (LOCKED == false) {
       for (var i = 0; i < count; i++) {
         tri[i].update();
