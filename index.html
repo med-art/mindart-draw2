@@ -170,7 +170,7 @@
     buttonRestart.style("border", "1px solid white");
     buttonRestart.size(palWidth, bHeight);
     buttonRestart.position(0, palHighCount * swatchUnit + palWidth + bHeight * 2);
-    buttonRestart.mousePressed(restart);
+    buttonRestart.mouseClicked(restart);
 
     //SUBMIT POP-UP
         thankyou = "THANK YOU ! <br> Your drawing ID is:<br><br><b>";
@@ -263,6 +263,7 @@
     toQuestions.hide();
 
 
+
     //reset canvas
     background(255);
     for (var i = 0; i < count; i++) {
@@ -274,6 +275,8 @@
     colorIndexArray = [];
 
     LOCKED = false;
+
+    setupPalette();
 
   }
 
