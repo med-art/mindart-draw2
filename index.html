@@ -6,21 +6,28 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
   <style>
+    html,
     body {
-      padding: 0;
       margin: 0;
-      height: 100%;
-      overflow: hidden;
+      padding: 0;
       position: fixed;
     }
+    p {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 10pt;
+      padding: 22pt;
+      text-align: center;
+    }
   </style>
+
 </head>
 
 </html>
 
 <script>
-  var wideCount = 150;
+  var wideCount = 120;
   var unit;
   var count;
   var tri = [];
@@ -468,18 +475,3 @@
     return colorIndex[_i];
   }
 </script>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  p {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 10pt;
-    padding: 22pt;
-    text-align: center;
-  }
-</style>
