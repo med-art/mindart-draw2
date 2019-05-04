@@ -170,7 +170,7 @@
     buttonRestart.style("border", "1px solid white");
     buttonRestart.size(palWidth, bHeight);
     buttonRestart.position(0, palHighCount * swatchUnit + palWidth + bHeight * 2);
-    buttonRestart.mousePressed(restart);
+    buttonRestart.mouseClicked(restart);
 
     //SUBMIT POP-UP
         thankyou = "THANK YOU ! <br> Your drawing ID is:<br><br><b>";
@@ -187,7 +187,7 @@
         toQuestions.size(palWidth, bHeight * 2);
         toQuestions.position(windowWidth / 2, windowHeight / 2);
         toQuestions.style("transform", "translate(-50%)");
-        toQuestions.mousePressed(questionsLink);
+        toQuestions.mouseClicked(questionsLink);
         toQuestions.hide();
 
       }
@@ -298,7 +298,7 @@
     }
   }
 
-  function mousePressed() {
+  function mouseClicked() {
     if (LOCKED == false) {
       for (var i = 0; i < count; i++) {
         tri[i].update();
