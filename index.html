@@ -5,11 +5,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
-  <script src="sketch.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-  <script language="javascript" type="text/javascript" src="path/to/p5.dom.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
   <style>
     body {
       padding: 0;
@@ -29,7 +25,7 @@
   var count;
   var tri = [];
   var squ = [];
-  var palWidth;
+  var palWidth = 150;
   var palHighCount;
   var palWideCount = 4;
   var swatchCount = 24;
@@ -71,7 +67,7 @@
     createCanvas(windowWidth - 30, windowHeight - 30);
 
     top = createGraphics(400, 400);
-  pixelDensity(1); // effectively ignores retina displays
+
     paletteVersion = 1;
     paletteVersionTitle = "Urban";
 
@@ -143,8 +139,6 @@
   }
 
   function setupPalette() { //PALETTE
-
-    palWidth = ((windowHeight/(swatchCount/palWideCount))*palWideCount)/2;
 
     //SQUARES PALETTE
     var indexSq = 0;
