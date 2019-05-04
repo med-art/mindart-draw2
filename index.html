@@ -3,7 +3,7 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 
@@ -14,6 +14,7 @@
       padding: 0;
       position: fixed;
     }
+
     p {
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 10pt;
@@ -90,17 +91,7 @@
     setupDOM();
 
     //FIREBASE
-    var config = {
-      apiKey: "AIzaSyDKT2VrKW7HAKhWq8Lfn3-WhQiQBEwUODg",
-      authDomain: "project-botanical.firebaseapp.com",
-      databaseURL: "https://project-botanical.firebaseio.com",
-      projectId: "project-botanical",
-      storageBucket: "project-botanical.appspot.com",
-      messagingSenderId: "105545324498"
-    };
-    firebase.initializeApp(config);
-    database = firebase.database();
-
+  
     //ID
     id = "YET TO SUBMIT"
     last = "Previously submitted ID:<br>";
@@ -170,7 +161,7 @@
     buttonChangePalette.style("border", "1px solid white");
     buttonChangePalette.size(palWidth, bHeight);
     buttonChangePalette.position(0, palHighCount * swatchUnit + palWidth);
-  //  buttonChangePalette.touchStarted(changePalette);
+    //  buttonChangePalette.touchStarted(changePalette);
     buttonChangePalette.mousePressed(changePalette);
 
     var buttonRestart = createButton('Restart');
@@ -178,28 +169,28 @@
     buttonRestart.style("border", "1px solid white");
     buttonRestart.size(palWidth, bHeight);
     buttonRestart.position(0, palHighCount * swatchUnit + palWidth + bHeight * 2);
-  //  buttonRestart.touchStarted(restart);
-   buttonRestart.mousePressed(restart);
+    //  buttonRestart.touchStarted(restart);
+    buttonRestart.mousePressed(restart);
 
     //SUBMIT POP-UP
-        thankyou = "THANK YOU ! <br> Your drawing ID is:<br><br><b>";
-        toRestart = "</b><br><br>To create another drawing press RESTART on the left. <br><br> If you have been provided a physical questionnaire please complete that.<br>Otherwise, continue to the online questionnaire."
-        popup = createP(thankyou + " " + toRestart);
-        popup.style("background-color", color(200, 240));
-        popup.position(windowWidth / 2, windowHeight / 6);
-        popup.style("transform", "translate(-50%)");
-        popup.hide();
+    thankyou = "THANK YOU ! <br> Your drawing ID is:<br><br><b>";
+    toRestart = "</b><br><br>To create another drawing press RESTART on the left. <br><br> If you have been provided a physical questionnaire please complete that.<br>Otherwise, continue to the online questionnaire."
+    popup = createP(thankyou + " " + toRestart);
+    popup.style("background-color", color(200, 240));
+    popup.position(windowWidth / 2, windowHeight / 6);
+    popup.style("transform", "translate(-50%)");
+    popup.hide();
 
-        toQuestions = createButton('Continue to online Questionnaire ' + '\u25b6');
-        toQuestions.style("background-color", color(150));
-        toQuestions.style("border", "1px solid white");
-        toQuestions.size(palWidth, bHeight * 2);
-        toQuestions.position(windowWidth / 2, windowHeight / 2);
-        toQuestions.style("transform", "translate(-50%)");
-        toQuestions.mousePressed(questionsLink);
-        toQuestions.hide();
+    toQuestions = createButton('Continue to online Questionnaire ' + '\u25b6');
+    toQuestions.style("background-color", color(150));
+    toQuestions.style("border", "1px solid white");
+    toQuestions.size(palWidth, bHeight * 2);
+    toQuestions.position(windowWidth / 2, windowHeight / 2);
+    toQuestions.style("transform", "translate(-50%)");
+    toQuestions.mousePressed(questionsLink);
+    toQuestions.hide();
 
-      }
+  }
 
   function changePalette() {
 
@@ -229,35 +220,7 @@
 
   }
 
-  function submit() {
 
-    if (LOCKED == false) {
-
-      //set new id
-      id = guid();
-
-      //SAVE DATA
-
-      var ref = database.ref('drawings');
-      var data = {
-        id: id,
-        drawingLocations: triIndexArray,
-        drawingColors: colorIndexArray,
-        palette: paletteVersion
-      };
-
-      //DATA SENT!!!
-      ref.push(data);
-
-      popup.html(thankyou + id + toRestart);
-      popup.show();
-
-      toQuestions.show();
-
-      LOCKED = true;
-
-    }
-  }
 
   function questionsLink() {
 
