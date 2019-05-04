@@ -187,7 +187,7 @@
         toQuestions.size(palWidth, bHeight * 2);
         toQuestions.position(windowWidth / 2, windowHeight / 2);
         toQuestions.style("transform", "translate(-50%)");
-        toQuestions.mouseClicked(questionsLink);
+        toQuestions.mousePressed(questionsLink);
         toQuestions.hide();
 
       }
@@ -298,7 +298,7 @@
     }
   }
 
-  function mouseClicked() {
+  function mousePressed() {
     if (LOCKED == false) {
       for (var i = 0; i < count; i++) {
         tri[i].update();
