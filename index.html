@@ -163,7 +163,7 @@
     buttonChangePalette.style("border", "1px solid white");
     buttonChangePalette.size(palWidth, bHeight * 2);
     buttonChangePalette.position(0, palHighCount * swatchUnit + palWidth);
-    buttonChangePalette.mousePressed(changePalette);
+    buttonChangePalette.mouseClicked(changePalette);
 
     var buttonRestart = createButton('Restart');
     buttonRestart.style("background-color", color(200));
