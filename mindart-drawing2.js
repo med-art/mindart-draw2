@@ -75,6 +75,8 @@
 
   function setupCanvas() { //TRIANGLES
 
+    palWidth = (((height/3)*2/(swatchCount/palWideCount))*palWideCount)+5;
+
     var canvasWidth = width - palWidth;
     var unit = canvasWidth / (wideCount + 1) * 2;
     var pitch = (tan(PI / 3)) * (unit / 2);
@@ -111,7 +113,7 @@
     //SQUARES PALETTE
     var indexSq = 0;
     palHighCount = Math.ceil(swatchCount / palWideCount);
-    swatchUnit = palWidth / palWideCount;
+    swatchUnit = (height / palHighCount)/3*2;
 
     for (var u = 0; u < palHighCount; u++) {
       for (var v = 0; v < palWideCount; v++) {
@@ -310,7 +312,7 @@
 
 // below is the chosent swatch colour that needs to be amended to take up less real estate
 
-    rect(palWidth / 2, swatchUnit * palHighCount + palWidth / 4, (palWidth / 2) - 10, (palWidth / 4) - 10);
+    rect((palWidth / 2), palHighCount * (palWidth/palWideCount), (palWidth / 2)-5, (palWidth / 4));
     rectMode(CORNER);
     noStroke();
 
