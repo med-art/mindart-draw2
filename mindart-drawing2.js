@@ -1,11 +1,11 @@
-  var wideCount = 100;
+  var wideCount = 90;
   var unit;
   var count;
   var tri = [];
   var squ = [];
-  var palWidth = 150;
+  var palWidth = 100;
   var palHighCount;
-  var palWideCount = 4;
+  var palWideCount = 2;
   var swatchCount = 24;
   var swatchUnit;
 
@@ -138,7 +138,7 @@
     buttonRestart.style("background-color", color(200));
     buttonRestart.style("border", "1px solid white");
     buttonRestart.size(palWidth, bHeight);
-    buttonRestart.position(0, palHighCount * swatchUnit + palWidth + bHeight * 2);
+    buttonRestart.position(0, palHighCount * swatchUnit + palWidth + bHeight);
     //  buttonRestart.touchStarted(restart);
     buttonRestart.mousePressed(restart);
 
@@ -307,7 +307,10 @@
     stroke(200);
     fill(newColor);
     rectMode(RADIUS);
-    rect(palWidth / 2, swatchUnit * palHighCount + palWidth / 2, (palWidth / 2) - 10, (palWidth / 2) - 10);
+
+// below is the chosent swatch colour that needs to be amended to take up less real estate
+
+    rect(palWidth / 2, swatchUnit * palHighCount + palWidth / 4, (palWidth / 2) - 10, (palWidth / 4) - 10);
     rectMode(CORNER);
     noStroke();
 
