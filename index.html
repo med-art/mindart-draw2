@@ -15,6 +15,7 @@
       margin: 0;
       padding: 0;
       position: fixed;
+      overflow: hidden;
       top: 0;
       left: 0;
       width: 100%;
@@ -35,29 +36,5 @@
 
 
 </head>
-
-<body>
-  <script>
-    function preventPullToRefresh(element) {
-      var prevent = false;
-
-      document.querySelector(element).addEventListener('touchstart', function(e){
-        if (e.touches.length !== 1) { return; }
-
-        var scrollY = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
-        prevent = (scrollY === 0);
-      });
-
-      document.querySelector(element).addEventListener('touchmove', function(e){
-        if (prevent) {
-          prevent = false;
-          e.preventDefault();
-        }
-      });
-    }
-
-    preventPullToRefresh('#id') // pass #id or html tag into the method
-  </script>
-  </body>
 
 </html>
